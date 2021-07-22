@@ -1,9 +1,11 @@
 # DNS Proxy Container
-AdGuard `dnsproxy` running in a container!
+AdGuard `dnsproxy` running in a container! A simple DNS proxy server that supports all existing DNS protocols including `DNS-over-TLS`, `DNS-over-HTTPS`, `DNSCrypt`, and `DNS-over-QUIC`. Moreover, it can work as a `DNS-over-HTTPS`, `DNS-over-TLS` or `DNS-over-QUIC` server.
 
-https://hub.docker.com/r/vmstan/dnsproxy
+More information can be found at: https://github.com/AdguardTeam/dnsproxy
 
-https://github.com/AdguardTeam/dnsproxy
+## Images
+
+Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 
 | Image Tag             | Architectures           | Image OS           | 
 | :-------------------- | :-----------------------| :----------------- | 
