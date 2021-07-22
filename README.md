@@ -29,6 +29,12 @@ docker run -d -e "ARGS=-u=tls://1.1.1.1" -p 53:53/udp vmstan/dnsproxy:latest
 
 This would use Cloudflare instead.
 
+If you want to use the container after passing DNS requests through another service on the same box (say, Pi-hole) then you can change the port mappings into the container.
+
+```
+docker run -d -e "ARGS=-u=tls://1.1.1.1" -p 8053:53/udp vmstan/dnsproxy:latest
+```
+
 ## Additional Arguments
 
 ```
