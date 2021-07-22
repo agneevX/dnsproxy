@@ -1,7 +1,9 @@
 # dnsproxy
 Adguard dnsproxy Container
 
+https://hub.docker.com/r/vmstan/dnsproxy
 https://github.com/AdguardTeam/dnsproxy
+
 
 | Image Tag             | Architectures           | Image OS           | 
 | :-------------------- | :-----------------------| :----------------- | 
