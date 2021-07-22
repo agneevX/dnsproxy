@@ -1,6 +1,8 @@
 FROM alpine:latest
 LABEL MAINTAINER VMSTAN <https://github.com/vmstan>
 
+RUN apk update
+RUN apk upgrade
 RUN apk add --no-cache curl
 
 # /usr/bin/dnsproxy
