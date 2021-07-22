@@ -1,5 +1,5 @@
 # DNS Proxy Container
-AdGuard `dnsproxy` running in a container container
+AdGuard `dnsproxy` running in a container!
 
 https://hub.docker.com/r/vmstan/dnsproxy
 
