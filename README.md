@@ -31,7 +31,7 @@ This would use Cloudflare instead.
 
 ## Second Hop
 
-If you want to use the container after passing DNS requests through another service on the same box (say, Pi-hole) then you can change the port mappings into the container. In this example you'd want to use the armv6 tag if you're running it on a Raspberry Pi.
+If you want to use the container after passing DNS requests through another service on the same box (say, Pi-hole) then you can change the port mappings into the container. In this example you'd want to use the `armv6` tag if you're running it on a Raspberry Pi.
 
 ```
 docker run -d -p 8053:53/udp vmstan/dnsproxy:armv6
