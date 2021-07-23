@@ -1,5 +1,5 @@
 FROM --platform=linux/arm64 alpine:latest
-LABEL MAINTAINER VMSTAN <https://github.com/vmstan>
+LABEL maintainer="Michael Stanclift <https://github.com/vmstan>"
 
 RUN apk update
 RUN apk upgrade
