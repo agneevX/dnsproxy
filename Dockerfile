@@ -26,6 +26,6 @@ RUN if [ "$TARGETPLATFORM" == "linux/arm/v6" ]; then cd /tmp \
     && dnsproxy --version \
     && rm -rf /tmp/*; fi
 
-ENV ARGS="-u=tls://9.9.9.9:853"
+ENV CONFIG="-u=tls://9.9.9.9:853"
 
-CMD /usr/bin/dnsproxy ${ARGS}
+CMD /usr/bin/dnsproxy ${CONFIG}
