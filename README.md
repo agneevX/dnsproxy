@@ -1,5 +1,5 @@
 # DNS Proxy Container
-AdGuard `dnsproxy` running in a container! A simple DNS proxy server that supports all existing DNS protocols including `DNS-over-TLS`, `DNS-over-HTTPS`, `DNSCrypt`, and `DNS-over-QUIC`. Moreover, it can work as a `DNS-over-HTTPS`, `DNS-over-TLS` or `DNS-over-QUIC` server.
+DNS Proxy is a very tiny, simple, DNS resolver written by the Adguard Team that supports all existing DNS protocols including `DNS-over-TLS`, `DNS-over-HTTPS`, `DNSCrypt`, and `DNS-over-QUIC`. It can work as a `DNS-over-HTTPS`, `DNS-over-TLS` or `DNS-over-QUIC` server.
 
 More information can be found at: https://github.com/AdguardTeam/dnsproxy
 
@@ -9,32 +9,29 @@ Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 
 | Image Tag             | Architectures           | Image OS           | 
 | :-------------------- | :-----------------------| :----------------- | 
-| latest                | amd64                   | Alpine Linux       |
-| arm64                 | arm64v8                 | Alpine Linux       | 
-| armv6                 | arm32v6                 | Alpine Linux       | 
+| latest                | amd64, arm64v8, arm32v6 | Alpine Linux       |
+
 
 ## Running
 
 ```
-docker run -d -p 53:53/udp vmstan/dnsproxy:latest
+docker run -d -p 53:53/udp vmstan/dnsproxy
 ```
-
-You should replace `latest` with the image tag that matches your architecture.  
 
 By default, the container is configured to make a DNS over TLS (DoT) to Quad9 (tls://9.9.9.9), but you can change this by passing additional arguments to the the container using the `ARGS` variable.
 
 ```
-docker run -d -e "ARGS=-u=tls://1.1.1.1" -p 53:53/udp vmstan/dnsproxy:latest
+docker run -d -e "ARGS=-u=tls://1.1.1.1" -p 53:53/udp vmstan/dnsproxy
 ```
 
 This would use Cloudflare instead.
 
 ## Second Hop
 
-If you want to use the container after passing DNS requests through another service on the same box (say, Pi-hole) then you can change the port mappings into the container. In this example you'd want to use the `armv6` tag if you're running it on a Raspberry Pi.
+If you want to use the container after passing DNS requests through another service on the same box (say, Pi-hole) then you can change the port mappings into the container to use something other than 53, which is typically what Pi-hole will use. 
 
 ```
-docker run -d -p 8053:53/udp vmstan/dnsproxy:armv6
+docker run -d -p 8053:53/udp vmstan/dnsproxy
 ```
 
 ## Additional Arguments
