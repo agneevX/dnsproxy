@@ -10,6 +10,7 @@ Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 | Image Tag             | Architectures           | Image OS           | 
 | :-------------------- | :-----------------------| :----------------- | 
 | latest                | amd64, arm64v8, arm32v6 | Alpine Linux       |
+| auto                  | amd64                   | Alpine Linux       |
 
 
 ## Running
