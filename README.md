@@ -23,7 +23,7 @@ docker run -d -p 53:53/udp vmstan/dnsproxy
 By default, the container is configured to make a DNS over TLS (DoT) to Quad9 (tls://9.9.9.9), but you can change this by passing additional arguments to the the container using the `CONFIG` variable.
 
 ```
-docker run -d -e "CONFIG=-u=tls://1.1.1.1" -p 53:53/udp vmstan/dnsproxy
+docker run -d -e "CONFIG=--upstream=tls://1.1.1.1" -p 53:53/udp vmstan/dnsproxy
 ```
 
 This would use Cloudflare instead.
@@ -35,6 +35,16 @@ If you want to use the container after passing DNS requests through another serv
 ```
 docker run -d -p 8053:53/udp vmstan/dnsproxy
 ```
+
+If for some reason you want change the `--port` that `dnsproxy` is using from within the `CONFIG` variable, make sure you change the port that is advertised via Docker.
+
+```
+docker run -d -e "CONFIG=--port=1111" -p 1111:1111/udp vmstan/dnsproxy
+```
+
+## Docker Compose
+
+See `docker-compose.yml` for an example configuration.
 
 ## Additional Arguments
 
