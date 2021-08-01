@@ -18,19 +18,19 @@ Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 docker run -d -p 53:53/udp --restart=always vmstan/dnsproxy
 ```
 
-To use VMware Photon OS as the base OS for the container:
+To use [VMware Photon OS](https://vmware.github.io/photon/) as the base OS for the container:
 
 ```
 docker run -d -p 53:53/udp --restart=always vmstan/dnsproxy:photon
 ```
 
-By default, the container is configured to make a DNS over TLS (DoT) to Quad9 (tls://9.9.9.9), but you can change this by passing additional arguments to the the container using the `CONFIG` variable.
+By default, the container is configured to make a DNS over TLS (DoT) to [Quad9](https://www.quad9.net) (tls://9.9.9.9), but you can change this by passing additional arguments to the the container using the `CONFIG` variable.
 
 ```
 docker run -d -e "CONFIG=--upstream=tls://1.1.1.1" -p 53:53/udp --restart=always vmstan/dnsproxy
 ```
 
-This would use Cloudflare instead.
+This would use [Cloudflare](https://1.1.1.1/dns/) instead.
 
 You could also configure Cloudflare as a backup to Quad9, additionally setting caching options for a minimum TTL of 30 minutes.
 
@@ -54,7 +54,7 @@ docker run -d -e "CONFIG=--port=1111" -p 1111:1111/udp --restart=always vmstan/d
 
 ## Docker Compose
 
-See `docker-compose.yml` for an example configuration.
+See [docker-compose.yml](https://github.com/vmstan/dnsproxy/blob/main/docker-compose.yml) for an example configuration.
 
 ## Additional Arguments
 
