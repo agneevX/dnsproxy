@@ -2,10 +2,8 @@ version: '3.3'
 services:
 	dnsproxy:
 		environment:
-			- 'CONFIG=--upstream=tls://9.9.9.9' 	# edit after CONFIG=
+			- 'CONFIG=--cache --cache-min-ttl=1800 -u=tls://9.9.9.9 -f=tls://1.1.1.1'
 		ports:
-			- '53:53/udp' 					# plain old DNS port
-			# - '53:53/tcp'					# plain old DNS over tcp
-			# - '853:853'					# dns over tls INTO the container
-			# - '443:443'					# dns over https INTO the container
+			- '53:53/udp'
+		restart: always
 		image: vmstan/dnsproxy
