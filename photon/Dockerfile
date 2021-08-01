@@ -5,8 +5,6 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
 RUN tdnf update -y
-# RUN apk upgrade
-# RUN apk add --no-cache curl
 
 # /usr/bin/dnsproxy
 
