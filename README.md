@@ -9,8 +9,8 @@ Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 
 | Image Tag             | Architectures            | Image OS           | DNS Proxy Version  |
 | :-------------------- | :------------------------| :----------------- | :----------------- |
-| latest                | amd64, arm64v8, arm32v6  | Alpine Linux       | v0.39.0            |
-| photon                | amd64, arm64v8           | VMware Photon      | v0.39.0            |
+| latest                | amd64, arm64v8, arm32v6  | Alpine Linux       | v0.39.1            |
+| photon                | amd64, arm64v8           | VMware Photon      | v0.39.1            |
 
 ## Running
 
