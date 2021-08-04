@@ -7,10 +7,12 @@ More information can be found at: https://github.com/AdguardTeam/dnsproxy
 
 Images available at: https://hub.docker.com/r/vmstan/dnsproxy
 
-| Image Tag             | Architectures            | Image OS           | DNS Proxy Version  |
-| :-------------------- | :------------------------| :----------------- | :----------------- |
-| latest                | amd64, arm64v8, arm32v6  | Alpine Linux       | v0.39.1            |
-| photon                | amd64, arm64v8           | VMware Photon      | v0.39.1            |
+| Image Tag             | Architectures            | Image OS           |
+| :-------------------- | :------------------------| :----------------- |
+| latest                | amd64, arm64v8, arm32v6  | Alpine Linux       |
+| photon                | amd64, arm64v8           | VMware Photon      |
+
+Unless otherwise noted, these will always run the [latest available version](https://github.com/AdguardTeam/dnsproxy/releases) of DNS Proxy at the time of build.
 
 ## Running
 
