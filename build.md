@@ -1,15 +1,16 @@
 # Build Instructions
 
+## Clear Cache
 ```
 docker builder prune
 ```
 
-## Latest
+## Build Latest
 ```
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v6 -t vmstan/dnsproxy . --push
 ```
 
-## Photon
+## Build Photon
 ```
 docker buildx build --platform linux/amd64,linux/arm64 -t vmstan/dnsproxy:photon photon/. --push
 ```
