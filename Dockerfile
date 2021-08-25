@@ -4,6 +4,8 @@ LABEL maintainer="Michael Stanclift <https://github.com/vmstan>"
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
+EXPOSE 53
+
 RUN apk update
 RUN apk upgrade
 RUN apk add --no-cache curl

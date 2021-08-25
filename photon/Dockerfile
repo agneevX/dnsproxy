@@ -4,6 +4,8 @@ LABEL maintainer="Michael Stanclift <https://github.com/vmstan>"
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
+EXPOSE 53
+
 RUN tdnf update -y
 
 # /usr/bin/dnsproxy
