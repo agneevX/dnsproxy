@@ -1,5 +1,7 @@
 # Build Instructions
 
+Make sure Docker Desktop is running, and that the BuildX system is running.
+
 ## Clear Cache
 ```
 docker builder prune
