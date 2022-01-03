@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu
 LABEL maintainer="Michael Stanclift <https://github.com/vmstan>"
 
 ARG TARGETPLATFORM
@@ -6,16 +6,9 @@ ARG BUILDPLATFORM
 
 EXPOSE 53
 
-RUN apk update
-RUN apk upgrade
-RUN set -ex \
-    && apk add --update --no-cache curl wget ca-certificates jq tzdata \
-    && update-ca-certificates \
-    && echo $TZ > /etc/timezone \
-    && ln -sf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && date \
-    && apk del tzdata \
-    && rm -rf /var/cache/apk/*
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y curl
 
 # /usr/bin/dnsproxy
 

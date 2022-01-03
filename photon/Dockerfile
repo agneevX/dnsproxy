@@ -25,6 +25,11 @@ RUN if [ "$TARGETPLATFORM" == "linux/arm/v6" ]; then cd /tmp \
     && mv linux-arm6/dnsproxy /usr/bin/ \
     && dnsproxy --version \
     && rm -rf /tmp/*; fi
+RUN if [ "$TARGETPLATFORM" == "linux/arm/v7" ]; then cd /tmp \
+    && curl -skSL $(curl -skSL 'https://api.github.com/repos/AdguardTeam/dnsproxy/releases/latest' | sed -n '/url.*linux-arm6/{s/.*\(https:.*tar.gz\).*/\1/p}') | tar xz \
+    && mv linux-arm6/dnsproxy /usr/bin/ \
+    && dnsproxy --version \
+    && rm -rf /tmp/*; fi
 
 ENV CONFIG="-u=tls://9.9.9.9:853"
 
