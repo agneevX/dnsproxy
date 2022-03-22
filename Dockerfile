@@ -40,6 +40,8 @@ RUN if [ "$TARGETPLATFORM" == "linux/arm/v7" ]; then cd /tmp \
     && dnsproxy --version \
     && rm -rf /tmp/*; fi
 
-ENV CONFIG="-u=tls://9.9.9.9:853"
+COPY config.yaml /config/config.yaml
+
+ENV CONFIG="--config-path=/config/config.yaml"
 
 CMD /usr/bin/dnsproxy ${CONFIG}

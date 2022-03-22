@@ -4,18 +4,17 @@
 # option.  Any other command-line options specified will override the values
 # from the config file.
 ---
-bootstrap: 
+bootstrap:
   - "9.9.9.9:53"
   - "1.1.1.1:53"
-listen-addrs: 
+listen-addrs:
   - "0.0.0.0"
-listen-ports: 
+listen-ports:
   - 53
 max-go-routines: 0
 ratelimit: 0
 udp-buf-size: 0
-cache: 
-upstream: 
-  - "quic://dns.adguard.com"
+cache:
+upstream:
   - "9.9.9.9:853"
   - "1.1.1.1:853"
