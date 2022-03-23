@@ -5,16 +5,18 @@
 # from the config file.
 ---
 bootstrap:
-  - "9.9.9.9:53"
-  - "1.1.1.1:53"
+  - 9.9.9.9:53
+  - 1.1.1.1:53
 listen-addrs:
-  - "0.0.0.0"
+  - 0.0.0.0
 listen-ports:
   - 53
 max-go-routines: 0
 ratelimit: 0
 udp-buf-size: 0
 cache:
+edns:
+all-servers:
 upstream:
-  - "9.9.9.9:853"
-  - "1.1.1.1:853"
+  - tls://9.9.9.9
+  - tls://1.1.1.1
