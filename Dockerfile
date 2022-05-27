@@ -13,7 +13,7 @@ RUN apk add --update --no-cache curl wget ca-certificates tzdata \
     && apk del curl wget tzdata
 
 RUN apk add --no-cache jq \
-    curl -s -o /usr/bin/dnsproxy \
+    && curl -s -o /usr/bin/dnsproxy \
     $(curl -s https://api.github.com/repos/adguardteam/adguardhome/releases/latest \
     | jq -r '.assets[].browser_download_url' | grep $(echo TARGETPLATFORM | sed 's/\//_/g')) \
     && /usr/bin/dnsproxy --version \
