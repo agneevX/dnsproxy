@@ -13,7 +13,7 @@ RUN apk add --update --no-cache curl wget ca-certificates tzdata jq \
     && wget $(curl -s https://api.github.com/repos/adguardteam/dnsproxy/releases/latest \
     | jq -r '.assets[].browser_download_url' | grep $(echo $TARGETPLATFORM | sed 's/\//-/g')) \
     && tar -xf ./*.tar.gz \
-    && mv ./$(echo $TARGETPLATFORM | sed 's/\//_/g')/dnsproxy /usr/bin/ \
+    && mv ./linux-*/dnsproxy /usr/bin/ \
     && /usr/bin/dnsproxy --version \
     && apk del curl jq wget tzdata \
     && rm -rf ./*.tar.gz linux* /var/cache/apk/*
