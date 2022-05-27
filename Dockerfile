@@ -15,7 +15,7 @@ RUN apk add --update --no-cache ca-certificates tzdata \
 RUN apk add --update --no-cache curl jq \
     curl -s -o /usr/bin/dnsproxy \
     $(curl -s https://api.github.com/repos/adguardteam/adguardhome/releases/latest \
-    | jq -r '.assets[].browser_download_url' | grep $(echo TARGETPLATFORM | sed 's/\//_/g'))
+    | jq -r '.assets[].browser_download_url' | grep $(echo TARGETPLATFORM | sed 's/\//_/g')) \
     && /usr/bin/dnsproxy --version \
     && apk del curl jq tzdata \
     && rm -rf /var/cache/apk/*
