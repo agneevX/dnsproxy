@@ -5,14 +5,14 @@ LABEL maintainer="Michael Stanclift <https://github.com/vmstan>"
 ARG TARGETPLATFORM=linux/amd64
 ARG BUILDPLATFORM
 
-RUN apk add --update --no-cache ca-certificates tzdata \
+RUN apk add --update --no-cache curl wget ca-certificates tzdata \
     && update-ca-certificates \
     && echo $TZ > /etc/timezone \
     && ln -sf /usr/share/zoneinfo/$TZ /etc/localtime \
     && date \
     && apk del curl wget tzdata
 
-RUN apk add --update --no-cache curl jq \
+RUN apk add --no-cache jq \
     curl -s -o /usr/bin/dnsproxy \
     $(curl -s https://api.github.com/repos/adguardteam/adguardhome/releases/latest \
     | jq -r '.assets[].browser_download_url' | grep $(echo TARGETPLATFORM | sed 's/\//_/g')) \
