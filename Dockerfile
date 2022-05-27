@@ -10,12 +10,13 @@ RUN apk add --update --no-cache curl wget ca-certificates tzdata jq \
     && echo $TZ > /etc/timezone \
     && ln -sf /usr/share/zoneinfo/$TZ /etc/localtime \
     && date \
-    && wget -o /usr/bin/dnsproxy \
-    $(curl -s https://api.github.com/repos/adguardteam/dnsproxy/releases/latest \
+    && wget $(curl -s https://api.github.com/repos/adguardteam/dnsproxy/releases/latest \
     | jq -r '.assets[].browser_download_url' | grep $(echo $TARGETPLATFORM | sed 's/\//_/g')) \
+    && tar -xf ./*.tar.gz \
+    && mv ./$(echo $TARGETPLATFORM | sed 's/\//_/g')/dnsproxy /usr/bin/ \
     && /usr/bin/dnsproxy --version \
     && apk del curl jq wget tzdata \
-    && rm -rf /var/cache/apk/*
+    && rm -rf ./*.tar.gz linux* /var/cache/apk/*
 
 COPY config.yaml /config/
 
