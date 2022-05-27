@@ -11,7 +11,7 @@ RUN apk add --update --no-cache curl wget ca-certificates tzdata jq \
     && ln -sf /usr/share/zoneinfo/$TZ /etc/localtime \
     && date \
     && wget $(curl -s https://api.github.com/repos/adguardteam/dnsproxy/releases/latest \
-    | jq -r '.assets[].browser_download_url' | grep $(echo $TARGETPLATFORM | sed 's/\//_/g')) \
+    | jq -r '.assets[].browser_download_url' | grep $(echo $TARGETPLATFORM | sed 's/\//-/g')) \
     && tar -xf ./*.tar.gz \
     && mv ./$(echo $TARGETPLATFORM | sed 's/\//_/g')/dnsproxy /usr/bin/ \
     && /usr/bin/dnsproxy --version \
